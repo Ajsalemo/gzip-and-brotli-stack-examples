@@ -9,6 +9,8 @@ builder.Services.AddResponseCompression(options =>
 {
     // Specify a provider to use - we use gzip here
     options.Providers.Add<GzipCompressionProvider>();
+    // Needs to be enabled
+    options.EnableForHttps = true;
 });
 
 var app = builder.Build();
